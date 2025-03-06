@@ -1,0 +1,72 @@
+ import java.util.Scanner;
+/*
+*Write a program to input two numbers and find the maximum between two numbers using the conditional/ternary operator.
+*/
+public class MaximumOfTwoNumbers
+{
+       public static void main(String[] args)
+        {
+               Scanner input=new Scanner(System.in);
+               System.out.print("Enter any two numbers: ");
+               int num1 = input.nextInt();
+               int num2 = input.nextInt();
+ // Ternary operator for number
+               boolean a= (num1>num2) ? true : false;
+               if(a)
+                    System.out.println(num1+"The maximum is");
+               else
+                   System.out.println(num2+"The maximum is");
+        }
+}
+
+=================================================================================================================================================== 
+/*
+*Create a Bank class and declare an instance variable named amount of type double.
+*Create parameterized constructor to initialize variable â€œamountâ€ with value 10000.
+*Create two methods withdraw(double withdrawalAmount) and deposit(double depositAmount).Calculate withdrawal based on some condition (using ternary operator) like If amount is sufficient then â€œwithdraw successfulâ€ message will be printed on the console and amount should be updated after withdraw.
+* Later on, deposit 5000 in the account balance.At the end display total balance on the console.
+*/
+ public class Bank 
+{
+// Instance variable account balance
+    double amount;
+
+ // Parameterized constructor to the amount
+    public Bank(double Amount)
+ {
+        this.amount = Amount;
+ }
+
+// Method to withdraw money
+    public void withdraw(double withdrawalAmount)
+ {
+        boolean flag;
+        flag=(amount>=withdrawalAmount)?true:false;
+        if(flag)
+        {
+              amount-=withdrawalAmount;
+              System.out.println("Withdraw successful.Withdraw Amount");
+        }
+        else
+          System.out.println("Withdrawal failed.insufficient amount!");             
+  }
+// deposit amount here
+    public void deposit(double depositAmount)
+ {
+        amount += depositAmount;
+        System.out.println("Deposit successful. Amount deposited: " + depositAmount);
+}
+
+//display the total balance
+    public void displayBalance()
+ {
+        System.out.println("Total balance: " + amount);
+ }
+    public static void main(String[] args)
+   {
+        Bank account = new Bank(10000);
+        account.withdraw(3000);
+        account.deposit(5000);
+        account.displayBalance();
+    }
+}

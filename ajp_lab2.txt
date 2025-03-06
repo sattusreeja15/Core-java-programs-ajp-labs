@@ -1,0 +1,74 @@
+/*
+Write a program to check leap year using if else.
+* How to check whether a given year is a leap year or not.
+* [Hint:Take an input of any number. Store it in some variable say year. If a year is exactly divisible by 4 and not divisible by 100, then it is a leap year. Or if a year is exactly divisible by 400 then it is a leap year.]
+*/
+import java.util.Scanner;
+
+class CheckLeapYear
+{ 
+  public static void main (String[] args)
+   {
+       Scanner sc = new Scanner (System.in);
+       System.out.println("Enter a year:");
+       int year = sc.nextInt();
+
+  //here we check if the year is a leap year
+     if((year % 4==0 && year % 100 !=0)||(year % 400 ==0))
+        {
+           System.out.println(year+"is a leap year.");
+        }
+           else
+             {
+                System.out.println(year +"is not a leap year");
+              }
+   }   
+}
+/*
+ Create a program to calculate the annual salary of an employee by using inheritance. 
+*Create a class named "User" with the following properties and methods: Properties: id(int): representing the id of the User name(String):representing the name of the User Constructor: Declare parameterized constructor to initialize id and name.
+** Create a subclass named "Employee" that inherits from the "User" class.
+* Add the following additional properties and methods: Properties: salary(double):representing the monthly salary of the employee Method: double calculateAnnualSalary():to calculate the annual salary earned by the employee.
+* In the main method, create an object of "Employee" class.
+** Calculate the annual salary of the employee and display it.. [Hint:Use constructor or setter methods to set the value]
+*/
+ class User
+{
+      int id;
+      String name;
+// here constructor to intialize the id and name
+        public User(int id,String name)
+      {
+          this.id = id;
+          this.name = name;
+      }
+       public void displayUserInfo() 
+         {
+              System.out.println("User Id"+id+"name:"+name);
+         } 
+}
+//Here create Subclass "Employee" that inherits from "User"
+ class Employee extends User
+ {
+     double salary;
+     public Employee(int id,String name, double salary)
+     {
+       super(id, name);
+       this.salary = salary;
+      }
+     public double calculateAnnualSalary()
+     {
+         return salary   * 12;
+      }
+}
+public class SalaryCalculator
+{
+   public static void main(String[] args)
+   {
+      Employee emp = new Employee (108,"sai",1000.00);
+      emp.displayUserInfo();
+// the Calculate and display the annual salary
+      double annualSalary =employee.calculateAnnualSalary();
+      System.out.println("Annual Salary:$"+annualSalary);
+    }
+}
